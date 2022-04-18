@@ -32,6 +32,34 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              child: const Text("Launch Alertdialog"),
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                  return  AlertDialog(
+                    title: const Text('Important !'),
+                    content: const Text ('This is an important information'),
+                    actions: [
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: const Text('OK')
+                      ),
+                    ],
+                  );
+                });
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
