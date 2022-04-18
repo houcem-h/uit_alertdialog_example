@@ -41,6 +41,7 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 showDialog(
                     context: context,
+                    barrierDismissible: false,
                     builder: (BuildContext context) {
                   return  AlertDialog(
                     title: const Text('Important !'),
